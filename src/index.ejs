@@ -29,7 +29,8 @@
             {
               "imports": {
                 "@app/root-config": "//localhost:9000/app-root-config.js",
-                "@app/remote-4":"//localhost:8080/js/app.js"
+                "@app/remote-4":"//localhost:8080/js/app.js",
+                "@app/remote-2":"//localhost:8081/js/app.js"
               }
             }
         </script>
@@ -46,6 +47,7 @@
   window.importMapInjector.initPromise.then(() => {
     import("@app/root-config");
   });
+
 </script>
 <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
 </body>

@@ -1,10 +1,10 @@
 import { registerApplication, start } from "single-spa";
+import microfrontendLayout from "./microfrontend-layout.html";
 import {
   constructApplications,
-  constructRoutes,
   constructLayoutEngine,
+  constructRoutes,
 } from "single-spa-layout";
-import microfrontendLayout from "./microfrontend-layout.html";
 
 const routes = constructRoutes(microfrontendLayout);
 const applications = constructApplications({
@@ -13,6 +13,7 @@ const applications = constructApplications({
     return import(/* webpackIgnore: true */ name);
   },
 });
+
 const layoutEngine = constructLayoutEngine({ routes, applications });
 
 applications.forEach(registerApplication);
